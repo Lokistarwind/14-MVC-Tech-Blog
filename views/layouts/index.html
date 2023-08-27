@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <body>
+<div class="col-md-6" id ="reveal-blogpost-form">
+    <h3>Create a New blogpost:</h3>
+
+    <form class="form new-blogpost-form">
+      <div class="form-group">
+        <label for="blogpost-name">blogpost title:</label>
+        <input class="form-input" type="text" id="blogpost-name" name="blogpost-name" />
+      </div>
+      <div class="form-group">
+        <label for="blogpost-desc">description:</label>
+        <textarea class="form-input" id="blogpost-desc" name="blogpost-desc"></textarea>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary" id="">Create</button>
+      </div>
+    </form>
+  </div>
+</div>
+<button class="btn btn-primary" id="newpost">+NEWPOST</button>
+<!-- SOMETHING LIKE THIS TO CONTROL DASHBOARD -->
+<script>
+    document.getElementById("reveal-blogpost-form").style.visibility = "hidden";
+    //document.getElementById("update-blogpost-form").style.visibility = "hidden";
+    document.getElementById("newpost").style.visibility = "visible";
+    document.querySelector('#newpost').addEventListener('click', reveal);
+    function reveal(){
+        document.getElementById("reveal-blogpost-form").style.visibility = "visible";
+   // document.getElementById("update-blogpost-form").style.visibility = "visible";
+   document.getElementById("newpost").style.visibility = "hidden";
+    }
+
+    // SOMETHING LIKE THIS FOR RESPECTIVE BLOGPOST FORM HANDLER
+
+    function post(){
+        document.querySelector('.new-blogpost-form').addEventListener('submit', signupFormHandler);
+    }
+
+   </script>
+   
+</body>
