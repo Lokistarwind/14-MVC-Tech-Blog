@@ -1,0 +1,18 @@
+[
+    {
+      "description": "wow looks great",
+      "user_id": 1,
+      "blogpost_id": 2
+    },
+    {
+        "description": "new comment",
+        "user_id": 2,
+        "blogpost_id": 1
+      },
+      {
+        "description": "could be better",
+        "user_id": 1,
+        "blogpost_id": 3
+      }
+  ]
+  

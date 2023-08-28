@@ -1,11 +1,10 @@
-{{!-- Main page for handlebars --}}
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fund My Project!</title>
+  <title>Tech Blog!</title>
   <link rel="stylesheet" href="/css/jass.css">
   <link rel="stylesheet" href="/css/style.css">
 </head>
@@ -18,9 +17,9 @@
       </h1>
       <nav>
         <!-- Conditionally render login or logout links -->
-        <a href="/homepage">Homepage</a> |
-        <a href="/dashboard">Dashboard</a> |
+        <a href="/">Homepage</a> |
         {{#if logged_in}}
+        <a href="/dashboard">Dashboard</a> |
         <button class="no-button" id="logout">logout</button>
         {{else}}
         <a href="/login">login</a>
