@@ -1,9 +1,9 @@
 //standard post and delete request code
-const router = require('express').Router();
-const { Blogpost } = require('../../models');
-const withAuth = require('../../utils/auth');
+const router = require("express").Router();
+const { Blogpost } = require("../../models");
+const withAuth = require("../../utils/auth");
 
-router.post('/', withAuth, async (req, res) => {
+router.post("/", withAuth, async (req, res) => {
   try {
     const newBlogpost = await Blogpost.create({
       ...req.body,
@@ -16,7 +16,7 @@ router.post('/', withAuth, async (req, res) => {
   }
 });
 
-router.delete('/:id', withAuth, async (req, res) => {
+router.delete("/:id", withAuth, async (req, res) => {
   try {
     const blogpostData = await Blogpost.destroy({
       where: {
@@ -26,7 +26,7 @@ router.delete('/:id', withAuth, async (req, res) => {
     });
 
     if (!blogpostData) {
-      res.status(404).json({ message: 'No project found with this id!' });
+      res.status(404).json({ message: "No project found with this id!" });
       return;
     }
 
@@ -36,27 +36,24 @@ router.delete('/:id', withAuth, async (req, res) => {
   }
 });
 
-
-router.put('/:id',  withAuth, async (req, res) => {
-    // update a Blogpost by its `id` value
-    try{
-      const blogpostData = Blogpost.update(req.body, {
-        where: {
-          ...req.body,
-          id: req.params.id,
-          user_id: req.session.user_id,
-        },
-      });
-      if (!blogpostData) {
-        res.status(404).json({ message: 'No project found with this id!' });
-        return;
-      }
-      res.status(200).json(blogpostData);
-    } catch (err) {
-      res.status(500).json(err);
+router.put("/:id", withAuth, async (req, res) => {
+  // update a Blogpost by its `id` value
+  try {
+    const blogpostData = Blogpost.update(req.body, {
+      where: {
+        ...req.body,
+        id: req.params.id,
+        user_id: req.session.user_id,
+      },
+    });
+    if (!blogpostData) {
+      res.status(404).json({ message: "No project found with this id!" });
+      return;
     }
-  });
-
-
+    res.status(200).json(blogpostData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
 module.exports = router;
