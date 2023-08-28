@@ -26,8 +26,11 @@ Now you can run the project by typing
 node server
 Doing so you can go to the page on localhost:3001
 
-NOTE: Due to time constrainsts some of the functionality of the site is not workable on the site.
+## Notes: 
+Due to time constrainsts some of the functionality of the site is not workable on the site.
+
 The following functions and bugs are present:
+
 Dasbboard handlebar:
 On the dashboard the form to update a blogpost is visible despite its desgned to be hidden until you click the post itself.
 The update functionality of the dashboard is not functional. It seems a bug is triggering where a post is performing a DELETE of the blogpost instead of a PUT.
